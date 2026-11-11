@@ -1,0 +1,9 @@
+project: savantenvs/subsurface
+target: fuzz_divesoft
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_divesoft/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_divesoft
+    libfuzzer: true
+    timeout: 60

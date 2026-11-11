@@ -1,0 +1,10 @@
+project: savantenvs/subsurface
+target: fuzz_suunto_json
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_suunto_json/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_suunto_json
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/fuzz_suunto_json/fuzz_suunto_json.dict
+    timeout: 60
